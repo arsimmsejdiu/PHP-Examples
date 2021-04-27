@@ -11,7 +11,7 @@
     <div class="container mx-auto">
         <br /><br />
         <?php
-        include "./header1.php";
+        include "./header4.php";
         ?>
         <br />
         <!-- This example requires Tailwind CSS v2.0+ -->
@@ -38,7 +38,7 @@
                                                 <?php
                                                 require_once './db.conn..php';
 
-                                                $sql = "SELECT first_name, last_name, email FROM users WHERE last_name = 'palmer'";
+                                                $sql = "SELECT first_name, last_name, email FROM users WHERE email LIKE '%google%'";
                                                 foreach ($conn->query($sql) as $row) {
                                                     // echo "<div class='flex-shrink-0 h-10 w-10'>";
                                                     // echo ' <img class="h-10 w-10 rounded-full" src="'. $row["avatar_url"] .'" />';
@@ -54,10 +54,10 @@
                                         <?php
                                         require_once './db.conn..php';
 
-                                        $sql = "SELECT first_name, last_name, email, country_code FROM users WHERE last_name = 'palmer'";
+                                        $sql = "SELECT first_name, last_name, email, email FROM users WHERE email LIKE '%google%' ";
                                         foreach ($conn->query($sql) as $row) {
                                             echo "<div class='text-sm text-gray-900'>" . $row["last_name"] . " </div>";
-                                            echo '<div class="text-sm text-gray-500">' . $row["country_code"] . "</div>";
+                                            echo '<div class="text-sm text-gray-500">' . $row["email"] . "</div>";
                                         }
                                         ?>
                                     </td>

@@ -11,7 +11,7 @@
     <div class="container mx-auto">
         <br /><br />
         <?php
-        include "./header1.php";
+        include "./header7.php";
         ?>
         <br />
         <!-- This example requires Tailwind CSS v2.0+ -->
@@ -23,10 +23,10 @@
                             <thead class="bg-gray-50">
                                 <tr>
                                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        Name
+                                        Male
                                     </th>
                                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        Last name
+                                        Female
                                     </th>
                                 </tr>
                             </thead>
@@ -38,13 +38,10 @@
                                                 <?php
                                                 require_once './db.conn..php';
 
-                                                $sql = "SELECT first_name, last_name, email FROM users WHERE last_name = 'palmer'";
+                                                $sql = "SELECT count(*) as male from users where gender = 'male'";
+
                                                 foreach ($conn->query($sql) as $row) {
-                                                    // echo "<div class='flex-shrink-0 h-10 w-10'>";
-                                                    // echo ' <img class="h-10 w-10 rounded-full" src="'. $row["avatar_url"] .'" />';
-                                                    // echo "</div";
-                                                    echo "<div class='text-sm font-medium text-gray-900'>" . $row["first_name"] . " </div>";
-                                                    echo "<div class='text-sm text-gray-500'>" .  $row["email"] . "</div>";
+                                                    echo "<div class='text-sm font-medium text-gray-900'>" . $row["male"] . " </div>";
                                                 }
                                                 ?>
                                             </div>
@@ -54,10 +51,10 @@
                                         <?php
                                         require_once './db.conn..php';
 
-                                        $sql = "SELECT first_name, last_name, email, country_code FROM users WHERE last_name = 'palmer'";
+                                        $sql = "SELECT count(*) as female from users where gender = 'female' ";
                                         foreach ($conn->query($sql) as $row) {
-                                            echo "<div class='text-sm text-gray-900'>" . $row["last_name"] . " </div>";
-                                            echo '<div class="text-sm text-gray-500">' . $row["country_code"] . "</div>";
+                                            //echo "<div class='text-sm text-gray-500'>" .  $row["first_name"] . "</div>";
+                                            echo "<div class='text-sm font-medium text-gray-900'>" . $row["female"] . " </div>";
                                         }
                                         ?>
                                     </td>
