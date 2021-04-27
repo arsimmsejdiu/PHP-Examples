@@ -28,7 +28,7 @@
 
         <?php
         if (isset($_POST['submit'])) {
-
+            echo "<h3>Result:</h3>";
             if (!empty($_POST['numb'])) {
                 echo "<br />";
                 foreach ($_POST['numb'] as $value) {
@@ -37,6 +37,8 @@
                     }
                     echo "<br />";
                 }
+            } else {
+                echo "select a number in the checkbox";
             }
         }
         ?>
