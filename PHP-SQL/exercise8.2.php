@@ -23,11 +23,11 @@
                             <thead class="bg-gray-50">
                                 <tr>
                                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        Average Age
+                                        Male
                                     </th>
-                                    <!-- <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        Age
-                                    </th> -->
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Female
+                                    </th>
                                 </tr>
                             </thead>
                             <tbody class="bg-white divide-y divide-gray-200">
@@ -39,26 +39,27 @@
                                                 require_once './db.conn..php';
 
                                                 $sql = "SELECT last_name, first_name, gender, 
-                                                round(AVG(ROUND(DATEDIFF(NOW(), STR_TO_DATE(birth_date, '%d/%m/%Y')) /365.25))) AS ord FROM users ORDER BY ord ASC";
+                                                round(AVG(ROUND(DATEDIFF(NOW(), STR_TO_DATE(birth_date, '%d/%m/%Y')) /365.25))) AS ord FROM users WHERE gender = 'male' ORDER BY ord ASC";
+
                                                 foreach ($conn->query($sql) as $row) {
-                                                    echo "<div class='text-sm font-medium text-gray-900'>" . $row["ord"] ."</div>";
-                                                   // echo "<div class='text-sm text-gray-500'>" . $row["diff"] . " ans " . "</div>";
+                                                    echo "<div class='text-sm font-medium text-gray-900'>" . $row["ord"] . " </div>";
                                                 }
                                                 ?>
                                             </div>
                                         </div>
                                     </td>
-                                    <!-- <td class="px-6 py-4 whitespace-nowrap">
+                                    <td class="px-6 py-4 whitespace-nowrap">
                                         <?php
-                                        // require_once './db.conn..php';
+                                        require_once './db.conn..php';
 
-                                        // $sql = "SELECT last_name, first_name, gender, CAST(NOW() as date) as tee, STR_TO_DATE(birth_date, '%d/%m/%Y') as format_birth FROM users ";
-                                        //foreach ($conn->query($sql) as $row) {
-                                        // echo "<div class='text-sm font-medium text-gray-900'>" .  " Nee: " . "</div>";
-                                        // echo "<div class='text-sm font-medium text-gray-500'>" . $row["format_birth"] . " </div>";
-                                        //}
+                                        $sql = "SELECT last_name, first_name, gender, 
+                                        round(AVG(ROUND(DATEDIFF(NOW(), STR_TO_DATE(birth_date, '%d/%m/%Y')) /365.25))) AS ord FROM users WHERE gender = 'female' GROUP BY gender ORDER BY ord ASC ";
+                                        foreach ($conn->query($sql) as $row) {
+                                            //echo "<div class='text-sm text-gray-500'>" .  $row["first_name"] . "</div>";
+                                            echo "<div class='text-sm font-medium text-gray-900'>" . $row["ord"] . " </div>";
+                                        }
                                         ?>
-                                    </td> -->
+                                    </td>
                                 </tr>
 
                                 <!-- More people... -->
