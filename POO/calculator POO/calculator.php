@@ -1,5 +1,13 @@
 <!doctype html>
 
+<!-- 2) Créez une classe Calculatrice qui pourra faire, pour deux chiffres qui lui seront passées en paramètres de ses méthodes :
+	Une addition
+	Une soustraction
+	Une multiplication
+	Une division
+	Un modulo
+En revanche je dois pouvoir me servir de ses méthodes sans instancier la classe Calculatrice. Trouvez comment. -->
+
 <html>
 
 <head>

@@ -1,3 +1,8 @@
+<!-- 1) Créez une classe Film avec les attributs :
+	id, nom, réalisateur, année
+	Un constructeur
+	Les getters et setters associés -->
+
 <?php 
 class Film {
     public $id;
