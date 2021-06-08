@@ -9,6 +9,14 @@
     <title>PHP Calculator</title>
 
     <style>
+        .calc {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: 300px;
+            flex-direction: column;
+        }
+
         p {
             font-size: 12px;
         }
@@ -22,9 +30,10 @@
 <body>
 
 
-    <h2>OOP calculator</h2>
-    <br>
-    <div>
+
+    <div class="calc">
+        <h2>OOP calculator</h2>
+        <br>
         <form action="calc.php" method="POST">
             <input type="text" name="num1Inserted">
             <input type="text" name="num2Inserted">
