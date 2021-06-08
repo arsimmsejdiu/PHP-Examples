@@ -24,18 +24,21 @@
 
     <h2>OOP calculator</h2>
     <br>
-    <form action="calc.php" method="POST">
-        <input type="text" name="num1Inserted">
-        <input type="text" name="num2Inserted">
-        <select name="calInserted">
-            <option value="add">Add</option>
-            <option value="sub">Subtract</option>
-            <option value="mul">Multiply</option>
-            <option value="div">Division</option>
-            <option value="modulo">Modulo</option>
-        </select>
-        <button type="submit">Calculate</button>
-    </form>
+    <div>
+        <form action="calc.php" method="POST">
+            <input type="text" name="num1Inserted">
+            <input type="text" name="num2Inserted">
+            <select name="calInserted">
+                <option value="add">Add</option>
+                <option value="sub">Subtract</option>
+                <option value="mul">Multiply</option>
+                <option value="div">Division</option>
+                <option value="modulo">Modulo</option>
+            </select>
+            <button type="submit">Calculate</button>
+        </form>
+    </div>
+
 
 
 </body>
