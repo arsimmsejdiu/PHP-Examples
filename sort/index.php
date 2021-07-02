@@ -87,6 +87,17 @@
 						<img src="images/snow-4668099_640.jpg" alt="winter">
 					</div>
 				</div>
+				<div class="gallery-item spring">
+					<div class="gallery-item-inner">
+						<img src="images/country-road-407207_640.jpg" alt="spring">
+					</div>
+				</div>
+				<!-- gallery item end -->
+				<!-- gallery item start -->
+				<div class="gallery-item summer">
+					<div class="gallery-item-inner">
+						<img src="images/indiana-dunes-state-park-1848559_640.jpg" alt="summer">
+					</d
 				<!-- gallery item end -->
 			</div>
 		</div>
